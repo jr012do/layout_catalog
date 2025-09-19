@@ -1,0 +1,32 @@
+@import './variables';
+@import './card';
+@import './stars';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-main;
+  letter-spacing: 0;
+  display: grid;
+  justify-items: center;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+  gap: 45.6px 48px;
+  padding: 50px 40px;
+  width: 100%;
+
+  @media screen and (min-width: 1200px) {
+    width: max-content;
+    grid-template-columns: repeat(4, minmax($card-width, 1fr));
+    padding: 50px calc((100vw - (4 * $card-width) - 3 * 48px) / 2);
+  }
+}
