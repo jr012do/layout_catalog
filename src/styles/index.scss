@@ -41,14 +41,14 @@ header {
   align-items: center;
 }
 
-nav {
+.header__nav {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;
 }
 
-nav ul {
+.header__list {
   display: flex;
   list-style: none;
   margin: 0;
@@ -56,7 +56,7 @@ nav ul {
   align-items: center;
 }
 
-nav a {
+.header__link {
   text-decoration: none;
   color: #060b35;
   text-transform: uppercase;
@@ -70,14 +70,15 @@ nav a {
   }
 }
 
-a.is-active {
+.header__link.is-active {
   color: var(--colbckg);
   text-decoration: none;
   position: relative;
   padding: 22.6px 0;
+  margin-right: 10px;
 }
 
-a.is-active::after {
+.header__link.is-active::after {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -89,15 +90,15 @@ a.is-active::after {
   border-radius: 16px;
 }
 
-li:nth-child(2) {
+.header__link:nth-child(2) {
   padding-left: 10px;
 }
 
-li a:hover {
+.header__item .header__link:hover {
   color: var(--colbckg);
   padding: 23px 0;
 }
 
-li:last-child a {
+.header__item:last-child .header__link {
   padding-right: 0;
 }
