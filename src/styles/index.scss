@@ -1,3 +1,5 @@
+@import './variables';
+
 :root {
   --colbckg: #00acdc;
 }
@@ -23,7 +25,7 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.container {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +33,7 @@ header {
   margin: 0 50px;
 }
 
-.logo {
+.header__logo_link {
   height: 40px;
   width: 40px;
   display: flex;
@@ -62,7 +64,7 @@ nav a {
   font-weight: 500;
   padding: 0 10px;
   display: inline-block;
-  transition: color 300ms;
+  transition: color $transition-duration;
   &:hover {
     color: #00acdc;
   }

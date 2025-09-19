@@ -19,13 +19,28 @@ body {
 
 .container-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
-  gap: 45.6px 48px;
+  gap: $gap-row $gap-column;
   padding: 50px 40px;
   width: 100%;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (max-width: 487px) {
+    grid-template-columns: repeat(1, minmax($card-width, 1fr));
+    padding: 50px calc((100vw - $card-width) / 2);
+  }
+
+  @media screen and (min-width: 488px) {
+    grid-template-columns: repeat(2, minmax($card-width, 1fr));
+    padding: 50px calc((100vw - (2 * $card-width) - 1 * 46px) / 2);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax($card-width, 1fr));
+    padding: 50px calc((100vw - (3 * $card-width) - 2 * 46px) / 2);
+  }
+
+  @media screen and (min-width: 1024px) {
     width: max-content;
+    gap: 45.6px 48px;
     grid-template-columns: repeat(4, minmax($card-width, 1fr));
     padding: 50px calc((100vw - (4 * $card-width) - 3 * 48px) / 2);
   }
